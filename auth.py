@@ -1,8 +1,9 @@
 import openai
 import tiktoken
+import constants
 
 def auth():
-    openai.api_key = "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"
+    openai.api_key = constants.OpenAPI_Key
 
 def openai_response():
     response = openai.Completion.create(
@@ -24,6 +25,7 @@ def compare(response):
         print(str(new_string))
         print(str(work_file))
         print("Files do not match.")
+    
 
 def streamAndPrint(response):
     completion_text = ''
